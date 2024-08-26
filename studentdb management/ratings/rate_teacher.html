@@ -1,0 +1,11 @@
+
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Rate Teacher</button>
+</form>
+{% endblock %}

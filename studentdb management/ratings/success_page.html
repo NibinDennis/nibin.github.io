@@ -1,0 +1,15 @@
+{% load static %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success Page</title>
+</head>
+<body>
+    <h1>Rating Submitted Successfully</h1>
+    <p>Thank you for rating the teacher.</p>
+    <a href="{% url 'rate_teacher' %}">Rate Another Teacher</a>
+</body>
+</html>
+{% endblock %}

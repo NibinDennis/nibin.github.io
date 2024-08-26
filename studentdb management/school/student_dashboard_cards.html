@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <style type="text/css">
+    a:link {
+      text-decoration: none;
+    }
+    
+    .order-card {
+      color: #fff;
+    }
+    
+    .bg-c-blue {
+      background: linear-gradient(45deg, #0046ab, #52a3e6); /* HD blue gradient */
+    }
+    
+    .bg-c-green {
+      background: linear-gradient(45deg, #2ca24f, #50d890); /* HD green gradient */
+    }
+    
+    .bg-c-yellow {
+      background: linear-gradient(45deg, #ffb100, #f5a623); /* HD yellow gradient */
+    }
+    
+    .bg-c-pink {
+      background: linear-gradient(45deg, #ff005a, #ff7885); /* HD pink gradient */
+    }
+    
+    .card {
+      border-radius: 10px; /* Increased border radius */
+      border: 4px solid #d6d6d6; /* Thick border */
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Increased shadow */
+      margin-bottom: 30px;
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+    }
+    
+    .card .card-block {
+      padding: 25px;
+    }
+    
+    .order-card i {
+      font-size: 36px; /* Larger icon size */
+    }
+    
+    .f-left {
+      float: left;
+    }
+    
+    .f-right {
+      float: right;
+    }
+    
+    .card:hover {
+      transform: rotateY(10deg) rotateX(10deg);
+    }
+  </style>
+</head>
+
+<body>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-xl-3">
+        <div class="card bg-c-blue order-card">
+          <div class="card-block">
+            <h6 class="m-b-20">Name</h6>
+            <h2 class="text-right"><i class="fas fa-user-tie f-left"></i></h2>
+            <p><span style="font-size: 20px;">{{request.user.first_name}}</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-xl-3">
+        <div class="card bg-c-green order-card">
+          <div class="card-block">
+            <h6 class="m-b-20">Contact</h6>
+            <h2 class="text-right"><i class="fas fa-mobile-alt f-left"></i></h2>
+            <p><span style="font-size: 20px;">{{mobile}}</span></p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-xl-3">
+        <div class="card bg-c-yellow order-card">
+          <div class="card-block">
+            <h6 class="m-b-20">Roll</h6>
+            <h2 class="text-right"><i class="fas fa-list-ol f-left"></i></h2>
+            <p><span style="font-size: 20px;">{{roll}}</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-xl-3">
+        <div class="card bg-c-pink order-card">
+          <div class="card-block">
+            <h6 class="m-b-20">Fee</h6>
+            <h2 class="text-right"><i class="fas fa-dollar f-left"></i></h2>
+            <p><span style="font-size: 20px;">{{fee}}</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+
+  </script>
+</body>
+
+</html>
