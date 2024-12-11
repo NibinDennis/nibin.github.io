@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>API Data - Search for a Country</h1>
+
+    <!-- Search Bar -->
+    {% comment %} <form method="GET" action="">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="countrySearch" name="q" placeholder="Search countries..." value="{{ query }}">
+            <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+    
+        <!-- Suggestions Dropdown -->
+        <ul id="suggestionsList" class="list-group" style="position: absolute; z-index: 1000; width: 100%;">
+        </ul>
+    </form> {% endcomment %}
+    <form method="GET" action="">
+        <div class="mb-3">
+            <input type="search" name="q" class="form-control" placeholder="Search for a country" value="{{ query }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    <div class="row">
+        {% for data1 in user %}
+            <div class="card col-md-4" style="width: 18rem;">
+                <img src="{{ data1.flags.png }}" class="card-img-top" alt="Flag of {{ data1.name.common }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ data1.name.common }}</h5>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+    
+    <!-- jQuery for handling the AJAX request -->
+    <script>
+        $(document).ready(function() {
+            $('#countrySearch').on('input', function() {
+                var query = $(this).val();
+    
+                if (query.length > 0) {
+                    $.ajax({
+                        url: '/country-suggestions/',  // The URL endpoint for country suggestions
+                        data: {'term': query},  // Send the current input as 'term'
+                        success: function(data) {
+                            $('#suggestionsList').empty();  // Clear previous suggestions
+                            if (data.length > 0) {
+                                $.each(data, function(index, value) {
+                                    $('#suggestionsList').append('<li class="list-group-item">' + value + '</li>');
+                                });
+                            } else {
+                                $('#suggestionsList').append('<li class="list-group-item">No countries found</li>');
+                            }
+                        }
+                    });
+                } else {
+                    $('#suggestionsList').empty();  // Clear suggestions if input is empty
+                }
+            });
+    
+            // Handle suggestion click
+            $(document).on('click', '.list-group-item', function() {
+                $('#countrySearch').val($(this).text());  // Fill the search bar with the clicked suggestion
+                $('#suggestionsList').empty();  // Clear suggestions list
+            });
+        });
+    </script>
+</body>
+</html>
