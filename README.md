@@ -322,6 +322,13 @@ student-crm-tool/
     ├── settings.py
     ├── urls.py
     └── wsgi.py
+
+License![2023-09-07 (2)](https://github.com/user-attachments/assets/0fd1804d-1e3a-452d-8526-939367cbe4f3)
+![2023-09-07 (3)](https://github.com/user-attachments/assets/167dfb18-ba38-4847-b67b-513b24dd71d1)
+![2023-09-07 (6)](https://github.com/user-attachments/assets/8ee9412e-95f6-4ae8-8cde-9fbfe29de44d)
+[school db1 (1).pptx](https://github.com/user-attachments/files/18092766/school.db1.1.pptx)
+
+
 Technologies Used
 Backend: Django (Python Framework)
 Frontend: HTML, CSS, JavaScript (Bootstrap)
@@ -337,8 +344,11 @@ Create a feature branch: git checkout -b my-feature.
 Commit your changes: git commit -m 'Add feature X'.
 Push to the branch: git push origin my-feature.
 Submit a pull request.
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+
+
+
+This project is licensed under the MIT License - see the LICENSE file for details.![Uploading 2023-09-07 (3).png…]()
+
 
 Acknowledgments
 Inspired by the need for efficient student and data management tools.
